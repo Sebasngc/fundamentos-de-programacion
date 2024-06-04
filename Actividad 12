@@ -1,0 +1,32 @@
+def suma_digitos(numero):
+  return sum(int(digito) for digito in str(numero))
+
+def es_primo(num):
+  if num < 2:
+      return False
+  for i in range(2, int(num**0.5) + 1):
+      if num % i == 0:
+          return False
+  return True
+
+def mostrar_digitos(numero):
+  return [int(digito) for digito in str(numero)]
+
+num1 = int(input("Ingrese el primer número entero: "))
+num2 = int(input("Ingrese el segundo número entero: "))
+diferencia = abs(num1 - num2)
+
+def producto_numeros(producto):
+  producto = num1 * num2
+  return producto
+  
+
+if diferencia % 2 == 0:
+  print(f"La suma de los dígitos es: {suma_digitos(num1) + suma_digitos(num2)}")
+elif es_primo(diferencia) and diferencia < 10:
+  print(f"El producto de los números es: {producto_numeros(num1 * num2)}")
+elif str(diferencia).endswith('4'):
+  print(f"Dígitos del primer número: {mostrar_digitos(num1)}")
+  print(f"Dígitos del segundo número: {mostrar_digitos(num2)}")
+else:
+  print("Ninguna condición especial se cumple.")
